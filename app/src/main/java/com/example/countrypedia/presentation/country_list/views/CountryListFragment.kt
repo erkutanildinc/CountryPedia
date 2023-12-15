@@ -48,11 +48,10 @@ class CountryListFragment() : Fragment() {
 
         CoroutineScope(Dispatchers.IO).launch {
 
-
             viewModel.state.collect{
-                it.countries?.let {
+                it.countries?.let {countryList ->
                     withContext(Dispatchers.Main){
-                        countryAdapter = CountryAdapter(it)
+                        countryAdapter = CountryAdapter(countryList)
                         countryRecyclerView.adapter = countryAdapter
                     }
                 }

@@ -9,5 +9,21 @@
         android:id="@+id/countryListFragment"
         android:name="com.example.countrypedia.presentation.country_list.views.CountryListFragment"
         android:label="fragment_country_list"
-        tools:layout="@layout/fragment_country_list" />
+        tools:layout="@layout/fragment_country_list" >
+        <action
+            android:id="@+id/action_countryListFragment_to_countryDetailFragment"
+            app:destination="@id/countryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryDetailFragment"
+        android:name="com.example.countrypedia.CountryDetailFragment"
+        android:label="fragment_country_detail"
+        tools:layout="@layout/fragment_country_detail" >
+        <action
+            android:id="@+id/action_countryDetailFragment_to_countryListFragment"
+            app:destination="@id/countryListFragment" />
+        <argument
+            android:name="countryName"
+            app:argType="string" />
+    </fragment>
 </navigation>

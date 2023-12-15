@@ -5,11 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.countrypedia.R
 import com.example.countrypedia.data.remote.dto.CountryDTOElement
 import com.example.countrypedia.domain.model.Country
+import com.example.countrypedia.presentation.country_list.views.CountryListFragmentDirections
 
 class CountryAdapter(var list : List<CountryDTOElement>) : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
 
@@ -36,6 +38,11 @@ class CountryAdapter(var list : List<CountryDTOElement>) : RecyclerView.Adapter<
 
         countryName.text = list.get(position).name.common
         Glide.with(holder.view).load(list.get(position).flags.png).into(countryImage)
+
+        holder.itemView.setOnClickListener {
+            val action = CountryListFragmentDirections.actionCountryListFragmentToCountryDetailFragment(list.get(position).name.common)
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
 
