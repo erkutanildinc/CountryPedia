@@ -11,4 +11,8 @@ class CountryRepositoryImpl @Inject constructor(private val api : CountryAPI) : 
     override suspend fun getCountries(): ArrayList<CountryDTOElement> {
         return api.getAllCountries()
     }
+
+    override suspend fun getCountriesByName(countryName: String): ArrayList<CountryDTOElement> {
+        return api.getCountryByName(countryName)
+    }
 }

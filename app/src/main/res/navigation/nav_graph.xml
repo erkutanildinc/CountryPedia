@@ -16,9 +16,8 @@
     </fragment>
     <fragment
         android:id="@+id/countryDetailFragment"
-        android:name="com.example.countrypedia.CountryDetailFragment"
-        android:label="fragment_country_detail"
-        tools:layout="@layout/fragment_country_detail" >
+        android:name="com.example.countrypedia.presentation.country_detail.views.CountryDetailFragment"
+        android:label="CountryDetailFragment" >
         <action
             android:id="@+id/action_countryDetailFragment_to_countryListFragment"
             app:destination="@id/countryListFragment" />

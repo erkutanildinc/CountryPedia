@@ -13,6 +13,6 @@ interface CountryAPI {
     suspend fun getAllCountries() : ArrayList<CountryDTOElement>
 
     @GET("name/{countryName}")
-    suspend fun getCountryByName(@Path("countryName") countryName : String) : CountryDTOElement
+    suspend fun getCountryByName(@Path("countryName") countryName : String) : ArrayList<CountryDTOElement>
 
 }

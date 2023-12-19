@@ -7,4 +7,6 @@ interface CountryRepository {
 
     suspend fun getCountries() : ArrayList<CountryDTOElement>
 
+    suspend fun getCountriesByName(countryName : String) : ArrayList<CountryDTOElement>
+
 }
